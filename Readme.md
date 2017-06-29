@@ -1,5 +1,21 @@
 # Four Column ASCII Table:
 
+Notes:
+
+* In ASCII, there are 32 characters at the beginning of the table that don't represent a written symbol such as Backspace, Newline, Escape, etc. These are called control characters.
+
+* When the ASCII table is printed in rows of 32, looking up data becomes easier:
+
+   * CTRL + [ corresponds to ESC in the same row
+
+   * Upper & Lower case alphabet differs by only a single bit (e.g. 1000001 => A and 1100001 => a)
+
+* In the terminal, you can type these control characters by holding the CTRL key in combination with another key (i.e. use CTRL key for control characters).
+
+   * In the VIM editor, for example, pressing CTRL + [ in the terminal (which is ^[ in caret notation) is the same as pressing the ESC key. The character [ and ESC are in the same row on the 32 rows ASCII table.
+
+   * Pressing CTRL simply sets all bits but the last 5 to zero in the 7 bit ASCII for the character that you typed (i.e. the first two bits is set to all zero and the last 5 bits remain the same).
+
 ASCII is a 7 bit encoding:
 
 * The first two bits denote the group of the character (2^2 so 4 possible values)
