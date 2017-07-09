@@ -2,19 +2,25 @@
 
 Notes:
 
-* In ASCII, there are 32 characters at the beginning of the table that don't represent a written symbol such as Backspace, Newline, Escape, etc. These are called control characters.
+* In a four column ASCII table, the 32 characters on the first column of the table don't represent a written symbol: these characters such as Backspace, Newline, Escape, etc. are called control characters.
+
+* In the terminal, you can type these control characters by holding the CTRL key in combination with another key (mnemonic: use a `CTRL` key combination for control characters).
+
+    * In the VIM editor, for example, pressing `CTRL + [` in the terminal (which is `^[` in caret notation) is the same as pressing the `ESC` key. The character `[` and `ESC` are on the same row in a four column ASCII table (fifth row from bottom).
+
+    * You might be wondering why pressing `CTRL + [` yields `ESC` and not other characters on the same row such as `;` and `{`. That's because pressing `CTRL` simply sets all bits but the last 5 to zero in the 7 bit ASCII for the character that you typed (i.e. the first two bits is set to zero and the last 5 bits remain the same). In essence, the `CTRL` character serves as the "bitwise AND": the result is 1 only if both operands are 1.
+
+        ```
+          10 11011 ([)
+        & 00 11111 (CTRL)
+        = 00 11011 (ESC)
+        ```
 
 * When the ASCII table is printed in rows of 32, looking up data becomes easier:
 
-   * CTRL + [ corresponds to ESC in the same row
+    * Upper case and lower case alphabet differs by only a single bit (e.g. 10 00001 => A and 11 00001 => a).
 
-   * Upper & Lower case alphabet differs by only a single bit (e.g. 1000001 => A and 1100001 => a)
-
-* In the terminal, you can type these control characters by holding the CTRL key in combination with another key (i.e. use CTRL key for control characters).
-
-   * In the VIM editor, for example, pressing CTRL + [ in the terminal (which is ^[ in caret notation) is the same as pressing the ESC key. The character [ and ESC are in the same row on the 32 rows ASCII table.
-
-   * Pressing CTRL simply sets all bits but the last 5 to zero in the 7 bit ASCII for the character that you typed (i.e. the first two bits is set to all zero and the last 5 bits remain the same).
+    * The character for the `CTRL` keyboard combination and the corresponding control character all exists on the same row. For example, the key combination `CTRL + [` corresponds to `ESC` in the same row (fifth row from bottom).
 
 ASCII is a 7 bit encoding:
 
@@ -52,7 +58,7 @@ ASCII is a 7 bit encoding:
 | EM | 9 | Y | y | 11001 |
 | SUB |: |Z | z | 11010 |
 | ESC | ; | [ | { | 11011 |
-| FS | < | \ | | | 11100 |
+| FS | < | \ | \| | 11100 |
 | GS | = | ] | } | 11101 |
 | RS | > | ^ | ~ | 11110 |
 | US | ? | _ | DEL | 11111 |
