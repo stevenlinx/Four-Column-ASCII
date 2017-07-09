@@ -4,7 +4,7 @@ Notes:
 
 * In a four column ASCII table, the 32 characters on the first column of the table don't represent a written symbol: these characters such as Backspace, Newline, Escape, etc. are called control characters.
 
-* In the terminal, you can type these control characters by holding the CTRL key in combination with another key (mnemonic: use a `CTRL` key combination for control characters).
+* In the terminal, you can type these control characters by holding the `CTRL` key in combination with another key (mnemonic: use a `CTRL` key combination for control characters).
 
     * In the VIM editor, for example, pressing `CTRL + [` in the terminal (which is `^[` in caret notation) is the same as pressing the `ESC` key. The character `[` and `ESC` are on the same row in a four column ASCII table (fifth row from bottom).
 
